@@ -6,7 +6,12 @@ import React from "react";
 type Props =
   | { tipo: "lucro"; data: { produto: string; lucro: number }[] }
   | { tipo: "producao"; data: { status: string; quantidade: number }[] }
-  | { tipo: "metas"; meta: number; atingido: number };
+  | {
+      tipo: "metas";
+      meta: number;
+      atingido: number;
+      tipoMeta?: "producao" | "vendas" | any;
+    };
 
 export default function ChartView(props: Props) {
   switch (props.tipo) {
@@ -15,7 +20,13 @@ export default function ChartView(props: Props) {
     case "producao":
       return <StatusProducao data={props.data} />;
     case "metas":
-      return <MetasAtingidas meta={props.meta} atingido={props.atingido} />;
+      return (
+        <MetasAtingidas
+          meta={props.meta}
+          atingido={props.atingido}
+          tipo={props.tipoMeta}
+        />
+      );
     default:
       return <p>Tipo de gráfico desconhecido</p>;
   }
