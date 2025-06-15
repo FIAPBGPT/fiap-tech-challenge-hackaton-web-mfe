@@ -4,11 +4,13 @@ import StatusProducao from "@/@core/components/charts/StatusProducao";
 import React from "react";
 import MetasGeoChart from "@/@core/components/charts/MetasGeoChart";
 
+
 type Props =
   | { tipo: "lucro"; data: { produto: string; lucro: number }[] }
   | { tipo: "producao"; data: { status: string; quantidade: number }[] }
   | { tipo: "metas"; meta: number; atingido: number }
-  | { tipo: "mapa"; data: { estado: string; meta: number }[] };
+  | { tipo: "mapa"; data: { estado: string; meta: number }[] }
+
 
 export default function ChartView(props: Props) {
   switch (props.tipo) {
