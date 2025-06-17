@@ -25,6 +25,7 @@ const nextConfig = {
       exposes: {
         "./app": "./pages/index.tsx",
         "./ChartView": "./pages/ChartView/index.tsx",
+        "./MapsChartView": "./pages/MapsChartView/index.tsx",
       },
       extraOptions: {}, // Add appropriate options here
     };
