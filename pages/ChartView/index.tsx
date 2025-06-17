@@ -7,7 +7,7 @@ import MetasGeoChart from "@/@core/components/charts/MetasGeoChart";
 
 type Props =
   | { tipo: "lucro"; data: { produto: string; lucro: number }[] }
-  | { tipo: "producao"; data: { status: string; quantidade: number }[] }
+  | { tipo: "producao"; data: { safra: string; produto: string, producao: number }[] }
   | { tipo: "metas"; data: {produto: string, meta: number, producao: number}[] }
   | { tipo: "mapa"; data: { estado: string; meta: number }[] }
 
