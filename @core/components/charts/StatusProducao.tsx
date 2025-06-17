@@ -56,7 +56,16 @@ export default function StatusProducao({ data }: Props) {
     hAxis: { title: "Produção" },
     vAxis: { title: "Produto" },
     bars: "horizontal", 
-
+    colors: [
+          "#97133E",  
+          "#FFA8C4", 
+          "#59734A", 
+          '#A67F00',
+          '#3b82f6',
+          '#10b981',
+          '#f59e0b',
+          '#ef4444',
+        ],
     isStacked: false,
     legend: { position: "top" }
   };

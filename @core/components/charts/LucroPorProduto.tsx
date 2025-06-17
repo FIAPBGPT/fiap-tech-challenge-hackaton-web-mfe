@@ -19,9 +19,10 @@ export default function LucroPorProduto({ data }: Props) {
         title: "Vendas por Produto",
         is3D: false,
         colors: [
-          "#4CAF50",  
-          "#2196F3", 
-          "#FF9800", 
+          "#97133E",  
+          "#FFA8C4", 
+          "#59734A", 
+          '#A67F00'
         ]
       }}
       width="100%"
