@@ -2,47 +2,35 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 type Props = {
-  meta: number;
-  atingido: number;
-  tipo?: "producao" | "vendas" | any;
+  data?: { produto: string; meta: number; producao: number }[];
 };
 
-export default function MetasAtingidas({ meta, atingido, tipo }: Props) {
-  const valorMeta = Number(meta);
-  const valorAtingido = Number(atingido);
-
-  const safeMeta = isNaN(valorMeta) ? 0 : valorMeta;
-  const safeAtingido = isNaN(valorAtingido) ? 0 : valorAtingido;
-  const max = Math.max(safeMeta, safeAtingido || 1);
-
-  const label = tipo === "vendas" ? "Vendas" : "Produção";
+export default function MetasAtingidas({ data = [] }: Props) { 
+  if (data.length === 0) {
+    return <div>Nenhum dado disponível para exibir o gráfico.</div>;
+  }
 
   const chartData = [
-    ["Label", "Value"],
-    [label, safeAtingido],
+    ["Produto", "Meta", "Produção"],
+    ...data.map((item) => [item.produto, item.meta, item.producao]),
   ];
 
-  console.log("chartData", chartData);
+  const options = {
+    title: "Metas Por Produto",
+    bars: "horizontal",
+    chartArea: { width: "50%" },
+    hAxis: { title: "Valor" },
+    vAxis: { title: "Produtos" },
+    colors: ["#8A1538", "#FFE5EC"], 
+  };
 
   return (
-    <>
-      <Chart
-        chartType="Gauge"
-        data={chartData}
-        options={{
-          redFrom: 0,
-          redTo: safeMeta * 0.5,
-          yellowFrom: safeMeta * 0.5,
-          yellowTo: safeMeta * 0.9,
-          greenFrom: safeMeta * 0.9,
-          greenTo: max,
-          min: 0,
-          max: max,
-          animation: { duration: 500, easing: "out" },
-        }}
-        width="400px"
-        height="120px"
-      />
-    </>
+    <Chart
+      chartType="BarChart"
+      width="100%"
+      height="400px"
+      data={chartData}
+      options={options}
+    />
   );
 }
