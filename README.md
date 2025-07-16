@@ -1,40 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# fiap-tech-challenge-hackaton-web-mfe
 
-## Getting Started
+Este projeto é um microfrontend desenvolvido com [Next.js](https://nextjs.org/) e utiliza o conceito de **Module Federation** para integração com outros módulos. A arquitetura segue os princípios de **Clean Architecture**, promovendo separação de responsabilidades, testabilidade e facilidade de manutenção.
 
-First, run the development server:
+## Tecnologias Utilizadas
+
+- **Next.js**: Framework React para aplicações web modernas, com renderização híbrida (SSR/SSG).
+- **React**: Biblioteca para construção de interfaces de usuário.
+- **Module Federation**: Permite que diferentes aplicações compartilhem módulos em tempo de execução, facilitando a composição de microfrontends.
+- **TypeScript**: Tipagem estática para maior segurança e produtividade.
+- **Clean Architecture**: Estrutura que separa regras de negócio, interfaces e frameworks, tornando o código mais organizado e escalável.
+
+## Começando
+
+Para iniciar o servidor de desenvolvimento, execute:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3001](http://localhost:3001) no navegador para visualizar o microfrontend.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Estrutura do Projeto
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- `pages/`: Páginas da aplicação.
+- `components/`: Componentes reutilizáveis.
+- `modules/`: Módulos federados para integração com outros microfrontends.
+- `core/`: Camada de domínio e regras de negócio (Clean Architecture).
+- `infra/`: Implementações de infraestrutura, como APIs e serviços.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Module Federation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Este microfrontend está configurado para expor e consumir módulos via **Module Federation**, permitindo integração dinâmica com outros sistemas e equipes independentes.
 
-## Learn More
+## Saiba Mais
 
-To learn more about Next.js, take a look at the following resources:
+- [Documentação Next.js](https://nextjs.org/docs)
+- [Documentação Module Federation](https://webpack.js.org/concepts/module-federation/)
+- [Clean Architecture - Robert C. Martin](https://github.com/cleanfolder/clean-architecture)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[Cibele Santos](https://github.com/cibsantos)                                             | [Flávia Jaconis](https://github.com/flaJaconis)                                             |[Malu Pereira](https://github.com/malulupereiraa)                                                    | [Thiago Martins](https://github.com/thiagofm33)                                             | [Victor Dantas](https://github.com/victorx9999)
+------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------
+[<img src="https://github.com/cibsantos.png" width="90" />](https://github.com/cibsantos) | [<img src="https://github.com/flaJaconis.png" width="90" />](https://github.com/flaJaconis) | [<img src="https://github.com/malulupereiraa.png" width="90" />](https://github.com/malulupereiraa) | [<img src="https://github.com/thiagofm33.png" width="90" />](https://github.com/thiagofm33) | [<img src="https://github.com/victorx9999.png" width="90" />](https://github.com/victorx9999)
+RM359376                                                                                  | RM358799                                                                                    | RM358717                                                                                            | RM359578                                                                                    | RM359148
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
