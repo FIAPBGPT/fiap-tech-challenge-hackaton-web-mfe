@@ -39,16 +39,33 @@ export default function StatusProducao({ data }: Props) {
           '#ef4444',
         ],
     isStacked: false,
-    legend: { position: "top" }
+    legend: { position: "center" }
   };
 
   return (
-    <Chart
-      chartType="Bar"
-      width="100%"
-      height="400px"
-      data={chartData}
-      options={options}
-    />
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      maxWidth: '1200px',
+      margin: '0 auto', 
+      padding: '45px 20px 0 20px',
+      backgroundColor: '#ffffff',
+
+    }}>
+      
+        <Chart
+          chartType="Bar"
+          width="100%"
+          height="350px"
+          data={chartData}
+          options={{
+            ...options,
+            chartArea: { width: "75%", height: "75%" },
+            backgroundColor: 'transparent'
+          }}
+        />
+      </div>
   );
 }
