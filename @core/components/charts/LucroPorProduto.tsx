@@ -1,32 +1,37 @@
-import React from "react";
-import { Chart } from "react-google-charts";
+import React from 'react'
+import { Chart } from 'react-google-charts'
 
 type Props = {
-  data: { produto: string; valor: number }[];
-};
+  data: { produto: string; valor: number }[]
+}
 
 export default function LucroPorProduto({ data }: Props) {
   const chartData = [
-    ["Produto", "Vendas"],
+    ['Produto', 'Vendas'],
     ...data.map((item) => [item.produto, item.valor]),
-  ];
+  ]
 
   return (
-    <Chart
-      chartType="PieChart"
-      data={chartData}
-      options={{
-        title: "Vendas por Produto",
-        is3D: false,
-        colors: [
-          "#97133E",  
-          "#FFA8C4", 
-          "#59734A", 
-          '#A67F00'
-        ]
+    <div
+      style={{
+        width: '100%',
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '20px',
+        backgroundColor: '#ffffff',
       }}
-      width="100%"
-      height="400px"
-    />
-  );
+    >
+      <Chart
+        chartType="PieChart"
+        data={chartData}
+        options={{
+          title: 'Vendas por Produto',
+          is3D: false,
+          colors: ['#97133E', '#FFA8C4', '#59734A', '#A67F00'],
+        }}
+        width="100%"
+        height="400px"
+      />
+    </div>
+  )
 }
